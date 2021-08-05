@@ -27,6 +27,25 @@
     <div class="content">
         <div class="items"></div>
     </div>
+    <div class="create-model-form">
+        <form action="http://localhost:3000/api/items" enctype="application/x-www-form-urlencoded">
+            <div>
+                <label for="productName">Your smartphone name:</label>
+                <input id="productName" type="text">
+            </div>
+            <div>
+                <label for="productModel">Model of smartphone:</label>
+                <input id="productModel" type="text">
+            </div>
+            <div>
+                <label for="productSize">Size:</label>
+                <input id="productSize" type="text">
+            </div>
+            <div>
+                <input type="submit" value="Publish">
+            </div>
+        </form>
+    </div>
 </body>
 <script src="main.js"></script>
 </html>
