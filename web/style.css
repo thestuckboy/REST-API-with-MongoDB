@@ -180,18 +180,68 @@ div.create-model-form{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(-100%);
 }
 
 div.create-model-form form{
-    background-color: white;
+    background-color: var(--white);
     padding: 25px;
+    width: 50%;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 div.create-model-form form div{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 20px;
 }
+
+div.create-model-form form input[type="text"]{
+    border: none;
+    background-color: black;
+    color: white;
+    height: 25px;
+    font-size: 18px;
+    padding-left: 10px;
+    font-family: 'Encode Sans SC', sans-serif;
+    transition: height 0.5s;
+}
+
+div.create-model-form form input[type="text"]:focus{
+    outline: none;
+    height: 40px;
+}
+
+div.create-model-form form input[type="submit"], .quit{
+    color: white;
+    background: black;
+    border: none;
+    height: 50px;
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size:18px;
+    transition: color .5s, background-color .5s, border .2s;
+}
+
+div.create-model-form form input[type="submit"]:hover, .quit:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+div.create-model-form form label{
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quit {
+    color: red;
+    margin-top: 20px;
+}
+
 /*Keyframes*/
 
 @keyframes goLeft {
@@ -222,4 +272,34 @@ div.create-model-form form div{
     100% {
         transform: translateX(0%);
     }   
+}
+
+/*Model animation*/
+
+@keyframes modelIn {
+    0% {
+        transform: translateY(-100%);
+        background: transparent;
+    }
+
+    75%{
+        background: transparent;
+        transform: translateX(0%);
+    }
+
+    100% {
+        background-color: rgb(0, 0, 0, 0.5);
+        transform: translateX(0%);
+    }
+}
+
+@keyframes modelOut {
+    0% {
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+
+    100% {
+        transform: translateY(-100%);
+        background: transparent;
+    }
 }

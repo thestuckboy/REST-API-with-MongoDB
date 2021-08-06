@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TVs from API</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
             <span class="brand">Smart Center</span>
             <ul>
                 <li>HOME</li>
-                <li>PUBLISH</li>
+                <li class="publish-button">PUBLISH</li>
                 <li>CREDITS</li>
             </ul>
         </nav>
@@ -28,24 +29,29 @@
         <div class="items"></div>
     </div>
     <div class="create-model-form">
-        <form action="http://localhost:3000/api/items" enctype="application/x-www-form-urlencoded">
+        <form action="http://localhost:3000/api/items" method="POST" autocomplete="off">
             <div>
                 <label for="productName">Your smartphone name:</label>
-                <input id="productName" type="text">
+                <input name="name" id="productName" type="text">
             </div>
             <div>
                 <label for="productModel">Model of smartphone:</label>
-                <input id="productModel" type="text">
+                <input name="model" id="productModel" type="text">
             </div>
             <div>
                 <label for="productSize">Size:</label>
-                <input id="productSize" type="text">
+                <input name="size" id="productSize" type="text">
             </div>
             <div>
-                <input type="submit" value="Publish">
+                <input type="submit" value="PUBLISH">
+            </div>
+            <div>
+                <button class="quit">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </form>
     </div>
 </body>
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 </html>

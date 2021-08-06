@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const defaultConf = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -15,8 +14,7 @@ server.set('port', process.env.PORT || 3000);
 
 //Middlewares:
 
-server.use(morgan('tiny'));
-server.use(bodyParser.urlencoded({extended: false}));
+server.use(express.urlencoded({extended: true}));
 
 //Connecting to MongoDB
 
@@ -55,7 +53,7 @@ server.get('/api/items', cors() ,async (req, res)=>{
 });
 
 server.post('/api/items', async (req, res)=>{
-    body = req.body;
+    let body = req.body;
     let newitem = new TvModel({
         name: body.name,
         model: body.model,
